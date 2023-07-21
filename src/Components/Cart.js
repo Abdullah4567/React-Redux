@@ -10,7 +10,7 @@ const Cart = () => {
 
     return (
         <>
-            {cart.items.length != 0 && <div className='w-full h-screen inline-flex text-white px-5' style={{
+            {cart.items.length !== 0 && <div className='w-full h-screen inline-flex text-white px-5' style={{
                 height: '89vh'
             }}>
                 <div className='w-11/12' style={{
@@ -60,7 +60,7 @@ const Cart = () => {
                     </div>
                 </div>
             </div >}
-            {cart.items.length == 0 && <EmptyCart />}
+            {cart.items.length === 0 && <EmptyCart />}
             <Link to='/products' className=' btn btn-primary text-md' style={{
                 position: 'absolute',
                 bottom: '10px',
