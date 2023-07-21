@@ -9,12 +9,12 @@ const ProductListing = () => {
     const { products } = useFetch('/products?limit=100');
     const { SetProducts } = bindActionCreators(actionCreators, dispatch);
     const searchedProducts = useSelector(state => state.searchedItems)
-    const productsToShow = searchedProducts.length == 0 ? products : searchedProducts
+    const productsToShow = searchedProducts.length === 0 ? products : searchedProducts
     useEffect(() => {
         if (products) {
             SetProducts(products);
         }
-    }, [products]);
+    }, products);
 
     return (
         <div>

@@ -17,7 +17,7 @@ const ProductDetail = () => {
     const { addToCart, removeFromCart } = bindActionCreators(CartActionCreators, dispatch);
     // console.log(items);
     const productToFind = items.find((element) => {
-        if (element.id == product?.id) return element;
+        if (element.id === product?.id) return element;
     });
 
     // style

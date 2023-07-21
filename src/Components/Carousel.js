@@ -10,7 +10,7 @@ const Carousel = ({ images }) => {
                 (images || []).map((image, index, images) => {
                     return (
                         <div id={`slide${index}`} className="carousel-item w-full relative" key={index}>
-                            <img src={image} className="w-full" />
+                            <img src={image} className="w-full" alt="image" />
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2">
                                 <div>
                                     {index !== 0 && <a href={`#slide${index == 0 ? index : index - 1}`}

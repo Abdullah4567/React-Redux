@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import { Actions } from "../ActionTypes";
 import initialState from "../initialState";
 import { showToast, TOAST_ACTION_TYPES } from "../../Utility";
@@ -61,7 +60,7 @@ const CartReducer = (state = initialState.cart, action) => {
             const { id } = action.payload
             const productToRemove = state.items.filter((item) => item.id === id);
             if (productToRemove.length != 0) {
-                const remainingProducts = state.items.filter((item) => item.id != id);
+                const remainingProducts = state.items.filter((item) => item.id !== id);
                 const cart = {
                     items: [...remainingProducts],
                     quantity: state.quantity - productToRemove[0].quantity,
