@@ -14,7 +14,7 @@ const ProductListing = () => {
         if (products) {
             SetProducts(products);
         }
-    }, products);
+    }, [products, SetProducts]);
 
     return (
         <div>

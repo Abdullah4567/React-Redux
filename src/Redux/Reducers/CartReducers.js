@@ -59,7 +59,7 @@ const CartReducer = (state = initialState.cart, action) => {
         case Actions.REMOVE_ALL_QUANTITY:
             const { id } = action.payload
             const productToRemove = state.items.filter((item) => item.id === id);
-            if (productToRemove.length != 0) {
+            if (productToRemove.length !== 0) {
                 const remainingProducts = state.items.filter((item) => item.id !== id);
                 const cart = {
                     items: [...remainingProducts],
