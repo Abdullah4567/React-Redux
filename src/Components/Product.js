@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Product = ({ product }) => {
     return (
 
-        <Link className="card bg-base-100 shadow-xl glass" to={`/products/${product.id}`}
+        <div className="card bg-base-100 shadow-xl glass"
             style={{
                 width: '22rem'
             }}>
@@ -33,7 +33,7 @@ const Product = ({ product }) => {
                     {/* <Link className="btn btn-primary" to={`/products/${product.id}`}>Show Details</Link> */}
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

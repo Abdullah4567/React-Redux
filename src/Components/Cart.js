@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector, } from 'react-redux'
+import { Navigate } from 'react-router-dom';
 import CartItem from './CartItem';
 import './style.css'
 import { Link } from 'react-router-dom';
 import EmptyCart from './EmptyCart';
+import BackButton from './BackButton';
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart)
@@ -15,13 +17,14 @@ const Cart = () => {
             }}>
                 <div className='w-11/12' style={{
                     paddingLeft: '5%',
-                    // height: '50%'
+                    height: '70%'
                 }}>
                     <p className=' text-2xl m-2'> Cart - {cart.quantity} Items</p>
                     <div className=' rounded-xl  w-10/12 ' style={{
                         border: '1px solid white',
                         overflowY: 'scroll',
-                        maxheight: '65%',
+                        minHeight: 'auto',
+                        maxHeight: '100%',
                         padding: '2%'
                     }}>
                         {cart.items.map((item, index) => {
@@ -61,11 +64,8 @@ const Cart = () => {
                 </div>
             </div >}
             {cart.items.length === 0 && <EmptyCart />}
-            <Link to='/products' className=' btn btn-primary text-md' style={{
-                position: 'absolute',
-                bottom: '10px',
-                right: '10px'
-            }}> Go to Home</Link>
+            <BackButton />
+            {/* <Link to='/products' className=' btn btn-primary text-md' > Go to Home</Link> */}
         </>
 
     )

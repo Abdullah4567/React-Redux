@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { CartActionCreators } from '../Redux/Action-Creators';
 import Carousel from './Carousel';
+import BackButton from './BackButton';
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -71,11 +72,12 @@ const ProductDetail = () => {
                     <div className="flex w-full justify-center">
                         {productToFind?.id ? actionButtons : addToCartElement}
                     </div>
-                    <Link to='/products' className=' btn btn-primary text-md' style={{
+                    <BackButton />
+                    {/* <Link to='/products' className=' btn btn-primary text-md' style={{
                         position: 'absolute',
                         bottom: '10px',
                         right: '10px'
-                    }}> Go to Home</Link>
+                    }}> Go to Home</Link> */}
                 </div>
             </div >
         </>)
